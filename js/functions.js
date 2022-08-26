@@ -18,4 +18,3 @@ const userNumber = Number(prompt("Queres saber cuantas veces se puede restar un 
 for (let i = userNumber ; i >= 0 ; i--){
     alert ("La cantidad de veces que podes restar tu número son " + i + " veces.")
 }
-Date
