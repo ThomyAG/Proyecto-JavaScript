@@ -3,9 +3,12 @@
 alert ("Bienvenid@ al calculador de frigorías para tu ambiente. Si te estas por comprar un aire acondicionado y necesitas saber las frigorías necesarias, estás en el lugar indicado.")
 alert ("Deberás completar los campos con ciertos datos de tu ambiente, así que, tené a mano algo para medir, y manos a la obra 👷🏻‍♀️.")
 
-const nLong = Number(prompt("Ingresá el largo (en metros) del ambiente en cuestión"));
-const nWidth = Number(prompt("Ingresá el ancho (en metros) del ambiente"));
-const nHeigth = Number(prompt("Ingresá el alto (en metros) del ambiente"));
+while (isNaN(nLong) && isNaN(nWidth) && isNaN(nHeigth)) {
+
+    var nLong = Number(prompt("Ingresá el largo (en metros) del ambiente en cuestión"));
+    var nWidth = Number(prompt("Ingresá el ancho (en metros) del ambiente"));
+    var nHeigth = Number(prompt("Ingresá el alto (en metros) del ambiente"));
+    }
 
 let result = 0
 function volume(nLong, nWidth, nHeigth) {
