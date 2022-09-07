@@ -18,14 +18,28 @@ volume(nLong, nWidth, nHeigth)
 
 let frig = Number(result * 50)
 
+const airConditioning = [ {
+    nombre: "Aire chico",
+    frigorias: 2250,
+},
+{
+    nombre: "Aire mediano",
+    frigorias: 3000,
+},
+{
+    nombre: "Aire grande",
+    frigorias: 4500,
+}]
+console.log(airConditioning[2])
+
 if (frig == 0){
     alert("Por favor, ingrese medidas válidas")
 } else if (frig <= 2500) {
-    alert("Necesitas un aire acondicionado de 2250 frigorias/h");
+    alert("Necesitas un aire acondicionado de" + airConditioning[0] );
 } else if(frig <=3700) {
-    alert("Tú habitación es mediana, te recomendamos un aire acondicionado de 3000 frigorias/horas");
+    alert(airConditioning[1]);
 } else if(frig <=4800) {
-    alert("Lindo ambiente, te recomendamos comprar un aire acondicionado de 4500 frigorias x hora");
+    alert("Lindo ambiente, te recomendamos comprar un aire acondicionado de" + airConditioning[2]);
 }else {
     alert("Te recomendamos contactarte con un profesional para gestionar mejor tu caso")
 }
