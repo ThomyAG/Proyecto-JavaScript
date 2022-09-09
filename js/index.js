@@ -1,4 +1,7 @@
 let option;
+let money;
+let reason;
+let gasto;
 
 const wallet = [
     {
@@ -11,31 +14,22 @@ const wallet = [
     },
 ];
 
-const sumWallet = wallet.reduce((acc, el) => ({
-...acc,
-    [el.money]: el,
-}), {})
-
-
-
-
-console.log(sumWallet)
-
 while(option !==0){
     option = Number(prompt("Ingrese una de las siguientes opciones:!\n1. Registrar ingreso\n2. Registrar gasto\n3. Consultar saldo\n0. Salir"))
     
     switch (option) {
         case 1:
-                let money = Number(prompt("Ingrese el monto en números sin puntos"));
-                let reason = prompt("Motivo del ingreso de dinero:");
+                money = Number(prompt("Ingrese el monto en números sin puntos."));
+                reason = prompt("Motivo del ingreso de dinero:");
                 recordIncome(money, reason);
-                console.log(recordIncome)
             break;
         case 2:
-                alert("Se ingreso la opcion Nº " + option);
+                gasto = Number(prompt("Ingrese el monto en números y sin puntos. "));
+                reason = prompt("Motivo del gasto de dinero: ");
+                recordIncome (-gasto, reason);
             break;
         case 3:
-                console.log(sumWallet);
+                sumaWallet();
             break;
         case 0:
                 alert("Gracias por pasar, salu2");
@@ -46,11 +40,11 @@ while(option !==0){
     }
 }
 
-function recordIncome(money, reason) {
-    wallet.push({
-        money,
-        reason,
-    });
+function recordIncome(num, ras) {
+    wallet.push({money: num, reason: ras});
 }
-// function getAllrecords
-// function recordExpense
+
+function sumaWallet() {
+    let sumarMoney = wallet.reduce((acc, el) => acc + el.money, 0);
+    alert(sumarMoney);
+}
