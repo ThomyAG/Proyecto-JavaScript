@@ -40,6 +40,7 @@ while(option !==0){
             break;
         case 3:
                 resto = sumaWallet();
+                document.getElementById("visualizadorDeDatos"). innerHTML = "Tu saldo actual es de $" + resto
             break;
         case 4:
                 filtro();
@@ -48,7 +49,7 @@ while(option !==0){
                 alert("Gracias por pasar, salu2");
             break;
         default:
-                alert("Ingrese una opocion valida como las que se muestran en pantalla")
+                alert("Ingrese una opcion valida como las que se muestran en pantalla")
             break;
     }
 }
@@ -62,7 +63,8 @@ function filtro() {
         let transaccion = Number(prompt("La cantidad de transacciones realizadas es de " + wallet.length + " transacciones.\n Que transaccion desea ver?"));
         if (transaccion > 0 && transaccion <= wallet.length){
         transaccion = transaccion - 1;
-        alert("La transaccion elegida es de " + wallet[transaccion].money + ". Motivo: " + wallet[transaccion].reason);
+        document.getElementById("visualizadorDeDatos"). innerHTML = "La transaccion elegida es de $" + wallet[transaccion].money + ". Motivo: " + wallet[transaccion].reason
+        // alert("La transaccion elegida es de " + wallet[transaccion].money + ". Motivo: " + wallet[transaccion].reason);
         break;
         } else {
             alert("Seleccione un valor dentro de las transacciones realizadas");
